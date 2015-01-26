@@ -87,11 +87,27 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cd0-zu-tgA">
-                        <rect key="frame" x="3" y="62" width="33" height="30"/>
+                        <rect key="frame" x="3" y="41" width="33" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="oCt-bT-Cnm"/>
+                            <constraint firstAttribute="width" constant="33" id="vaP-ZY-cYO"/>
+                        </constraints>
                         <state key="normal" title="X">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="default_person" translatesAutoresizingMaskIntoConstraints="NO" id="MeQ-e9-vdJ" userLabel="reciverBubble">
+                        <rect key="frame" x="4" y="88" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="JHm-we-Duo"/>
+                            <constraint firstAttribute="width" constant="30" id="KoF-fc-nMl"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="15"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
@@ -99,20 +115,23 @@
                 <constraint firstAttribute="trailing" secondItem="7Uc-dI-YDD" secondAttribute="trailing" id="1v4-5s-XmK"/>
                 <constraint firstItem="2zh-vR-QJW" firstAttribute="top" secondItem="p52-YN-yLu" secondAttribute="bottom" id="3Wx-g0-fTc"/>
                 <constraint firstAttribute="trailing" secondItem="jxM-YD-sVG" secondAttribute="trailing" id="AwY-g7-f1T"/>
-                <constraint firstItem="cd0-zu-tgA" firstAttribute="leading" secondItem="23f-xH-rkY" secondAttribute="leading" constant="3" id="FY3-LO-B2O"/>
                 <constraint firstItem="jxM-YD-sVG" firstAttribute="top" secondItem="23f-xH-rkY" secondAttribute="top" id="HYT-Tw-whz"/>
+                <constraint firstItem="2zh-vR-QJW" firstAttribute="leading" secondItem="cd0-zu-tgA" secondAttribute="trailing" constant="4" id="JVe-Dl-oOf"/>
                 <constraint firstAttribute="trailing" secondItem="X89-B1-aAd" secondAttribute="trailing" id="KLt-Ix-wDa"/>
                 <constraint firstItem="7Uc-dI-YDD" firstAttribute="top" secondItem="2zh-vR-QJW" secondAttribute="bottom" id="Ngq-ew-t2K"/>
-                <constraint firstItem="2zh-vR-QJW" firstAttribute="leading" secondItem="cd0-zu-tgA" secondAttribute="trailing" constant="4" id="WCi-yN-Dhc"/>
+                <constraint firstItem="MeQ-e9-vdJ" firstAttribute="leading" secondItem="23f-xH-rkY" secondAttribute="leading" constant="4" id="Ssu-ZH-pRn"/>
+                <constraint firstItem="cd0-zu-tgA" firstAttribute="top" secondItem="p52-YN-yLu" secondAttribute="bottom" constant="1" id="Swl-5r-iXD"/>
                 <constraint firstItem="7Uc-dI-YDD" firstAttribute="leading" secondItem="23f-xH-rkY" secondAttribute="leading" id="fiS-g3-X16"/>
                 <constraint firstAttribute="bottom" secondItem="7Uc-dI-YDD" secondAttribute="bottom" id="gXo-9b-b1W"/>
                 <constraint firstAttribute="trailing" secondItem="p52-YN-yLu" secondAttribute="trailing" id="gen-N0-uZj"/>
                 <constraint firstItem="7Uc-dI-YDD" firstAttribute="top" secondItem="X89-B1-aAd" secondAttribute="bottom" id="iiF-tn-5Ir"/>
                 <constraint firstItem="p52-YN-yLu" firstAttribute="top" secondItem="jxM-YD-sVG" secondAttribute="bottom" id="jBD-JV-AWk"/>
+                <constraint firstItem="cd0-zu-tgA" firstAttribute="leading" secondItem="23f-xH-rkY" secondAttribute="leading" constant="3" id="oVG-XO-f38"/>
                 <constraint firstItem="jxM-YD-sVG" firstAttribute="leading" secondItem="23f-xH-rkY" secondAttribute="leading" id="qeB-G5-1Wq"/>
                 <constraint firstItem="p52-YN-yLu" firstAttribute="leading" secondItem="23f-xH-rkY" secondAttribute="leading" id="tTj-Mp-0va"/>
-                <constraint firstAttribute="centerY" secondItem="cd0-zu-tgA" secondAttribute="centerY" id="u6w-CR-AcF"/>
+                <constraint firstItem="MeQ-e9-vdJ" firstAttribute="top" secondItem="cd0-zu-tgA" secondAttribute="bottom" constant="5" id="v1W-a1-Lkx"/>
                 <constraint firstItem="X89-B1-aAd" firstAttribute="leading" secondItem="2zh-vR-QJW" secondAttribute="trailing" constant="2" id="vMz-Yi-B0w"/>
+                <constraint firstItem="7Uc-dI-YDD" firstAttribute="top" secondItem="MeQ-e9-vdJ" secondAttribute="bottom" priority="700" constant="4" id="wUE-kc-ieP"/>
             </constraints>
             <size key="customSize" width="317" height="245"/>
             <connections>
@@ -129,6 +148,7 @@
                 <outlet property="messageBubbleImageView" destination="2qm-c6-OZf" id="bpy-Gv-jSh"/>
                 <outlet property="messageBubbleTopLabel" destination="p52-YN-yLu" id="SLH-sA-Chu"/>
                 <outlet property="messageBubbleTopLabelHeightConstraint" destination="8TB-va-f8L" id="FNt-BS-Wxi"/>
+                <outlet property="reciverBubble" destination="MeQ-e9-vdJ" id="Ujd-4d-z3k"/>
                 <outlet property="textView" destination="vLY-aM-0Dr" id="YEp-mW-xIY"/>
                 <outlet property="textViewAvatarHorizontalSpaceConstraint" destination="aVg-yy-8K7" id="CIe-Bi-eng"/>
                 <outlet property="textViewBottomVerticalSpaceConstraint" destination="UbF-Bl-Q7v" id="KHP-49-3u4"/>
@@ -138,6 +158,9 @@
             <point key="canvasLocation" x="371" y="145"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="default_person" width="81" height="81"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
