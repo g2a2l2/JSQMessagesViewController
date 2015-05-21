@@ -99,7 +99,7 @@
     UIImage *normalBubble = [self.bubbleImage jsq_imageMaskedWithColor:color];
     UIImage *highlightedBubble = [self.bubbleImage jsq_imageMaskedWithColor:[color jsq_colorByDarkeningColorWithValue:0.12f]];
     
-    if (flippedForIncoming) {
+    if (!flippedForIncoming) {
         normalBubble = [self jsq_horizontallyFlippedImageFromImage:normalBubble];
         highlightedBubble = [self jsq_horizontallyFlippedImageFromImage:highlightedBubble];
     }

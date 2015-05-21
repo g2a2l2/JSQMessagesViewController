@@ -18,11 +18,19 @@
 
 #import "JSQMessagesCollectionViewCell.h"
 
+@protocol JSQMessagesCellOutgoingDelegate <NSObject>
+
+- (void)userPressedMute:(id)sender atCell:(JSQMessagesCollectionViewCell*)cell;
+
+@end
+
 /**
  *  A `JSQMessagesCollectionViewCellOutgoing` object is a concrete instance 
- *  of `JSQMessagesCollectionViewCell` that represents an outgoing message data item.
+ *  of `JSQMessagesCollectionViewCell` that represents an ou
+ tgoing message data item.
  */
 @interface JSQMessagesCollectionViewCellOutgoing : JSQMessagesCollectionViewCell
-@property (unsafe_unretained, nonatomic) IBOutlet UIImageView *reciverBubble;
+@property (unsafe_unretained, nonatomic) IBOutlet UIButton *mute;
+@property (nonatomic,weak) id <JSQMessagesCellOutgoingDelegate> cellDelegte;
 
 @end

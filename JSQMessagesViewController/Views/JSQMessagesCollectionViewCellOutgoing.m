@@ -28,5 +28,11 @@
     self.messageBubbleTopLabel.textAlignment = NSTextAlignmentRight;
     self.cellBottomLabel.textAlignment = NSTextAlignmentRight;
 }
+- (IBAction)userPressedMute:(id)sender {
+    self.mute.selected = !self.mute.selected;
+    if (self.cellDelegte) {
+        [self.cellDelegte userPressedMute:sender atCell:self];
+    }
+}
 
 @end

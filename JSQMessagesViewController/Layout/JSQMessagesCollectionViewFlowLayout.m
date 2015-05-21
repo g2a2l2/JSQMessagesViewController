@@ -431,6 +431,8 @@ const CGFloat kJSQMessagesCollectionViewAvatarSizeDefault = 30.0f;
 
 - (CGSize)messageBubbleSizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    //@Michael
+    //
     id<JSQMessageData> messageItem = [self.collectionView.dataSource collectionView:self.collectionView messageDataForItemAtIndexPath:indexPath];
     
     NSValue *cachedSize = [self.messageBubbleCache objectForKey:@(messageItem.hash)];
@@ -472,6 +474,10 @@ const CGFloat kJSQMessagesCollectionViewAvatarSizeDefault = 30.0f;
         CGFloat finalWidth = MAX(stringSize.width + horizontalInsetsTotal, self.bubbleImageAssetWidth) + 2.0f;
         
         finalSize = CGSizeMake(finalWidth, stringSize.height + verticalInsets);
+        NSString *messageSender = [messageItem senderId];  
+        if ([messageSender isEqualToString:[self.collectionView.dataSource senderId]]) {
+            finalSize.height +=20;
+        }
     }
     
     [self.messageBubbleCache setObject:[NSValue valueWithCGSize:finalSize] forKey:@(messageItem.hash)];
